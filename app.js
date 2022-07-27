@@ -16,7 +16,7 @@ app.set('views', path.join(__dirname, "views"));
 
 //route:
 app.get("/", (req, res) => {
-	res.render("home");
+	res.render("shop");
 });
 //Demo local host
 app.listen(port, () => {
