@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
+
   "scripts": {
     "start": "nodemon --inspect app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,7 +11,8 @@
   "author": "Ren",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "express-handlebars": "^6.0.6"
   },
   "devDependencies": {
     "morgan": "^1.10.0",
