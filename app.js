@@ -32,7 +32,11 @@ app.get("/product", (req, res) => {
 app.get("/search", (req, res) => {
 	res.render("search");
 });
+
 app.get("/register", (req, res) => {
+	res.render("register");
+});
+app.post("/register", (req, res) => {
 	res.render("register");
 });
 //Demo local host
