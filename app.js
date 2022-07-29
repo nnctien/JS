@@ -29,8 +29,11 @@ app.get("/shop", (req, res) => {
 app.get("/product", (req, res) => {
 	res.render("product-details");
 });
-app.post("/search", (req, res) => {
+app.get("/search", (req, res) => {
 	res.render("search");
+});
+app.get("/register", (req, res) => {
+	res.render("register");
 });
 //Demo local host
 app.listen(port, () => {
