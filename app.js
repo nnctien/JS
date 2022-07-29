@@ -5,6 +5,10 @@ const app = express();
 const morgan = require('morgan');
 const exphbs  = require('express-handlebars');
 const port = 3000;
+
+app.use(express.urlencoded());
+app.use(express.json());
+
 //Morgan HTTP logger:
 app.use(morgan('combined'));
 //Static:
@@ -37,9 +41,10 @@ app.get("/register", (req, res) => {
 	res.render("register");
 });
 app.post("/register", (req, res) => {
-	res.render("register");
+	res.send("");
 });
-//Demo local host
+
+//Demo using local host
 app.listen(port, () => {
   console.log(`Example app listening on port http://localhost:${port}`);
 })

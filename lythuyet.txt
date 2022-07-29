@@ -1,0 +1,7 @@
+Query parameters:
+direct to address:....
+điều hướng người dùng sang địa chỉ abc.com/search?q=a+b+c&ref=c&author=lyc
+get: receive data from server to client
+post: send data from client to server 
+form data is not query parameters
+	to get data submited: req.body
