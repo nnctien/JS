@@ -21,13 +21,16 @@ app.set('views', path.join(__dirname, "views"));
 
 //route:
 app.get("/", (req, res) => {
-	res.render("home", layout: 'homeside');
+	res.render("home");
 });
 app.get("/shop", (req, res) => {
 	res.render("shop");
 });
 app.get("/product", (req, res) => {
 	res.render("product-details");
+});
+app.post("/search", (req, res) => {
+	res.render("search");
 });
 //Demo local host
 app.listen(port, () => {
