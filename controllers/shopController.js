@@ -3,7 +3,9 @@ const {MultiMongoosetoObject} = require('../ulti/mongoose')
 class ShopController{
     //[Get] /
     index(req, res, next) {
-        res.render('shop')
+        res.render('shop');
+
     }
 }
-module.exports = new ShopController
+module.exports = new ShopController;
+
