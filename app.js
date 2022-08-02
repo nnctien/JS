@@ -1,10 +1,14 @@
 const path = require("path");
-//
 const express = require('express');
-const app = express();
 const morgan = require('morgan');
 const exphbs  = require('express-handlebars');
+const mongoose = require("./ulti/mongoose");
 const port = 3000;
+const app = express();
+//Routes:
+
+const route = require('./routes');
+//const homeRouter = require('./routes/homeRouter');
 
 app.use(express.urlencoded());
 app.use(express.json());
@@ -14,7 +18,6 @@ app.use(morgan('combined'));
 //Static:
 app.use(express.static(path.join(__dirname, "public")));
 //Template engine:
-//exphbs.registerPartials(__dirname + '/views/partials');
 
 app.engine('.hbs', exphbs.engine({
   extname: '.hbs',
@@ -24,25 +27,8 @@ app.set('view engine', '.hbs');
 app.set('views', path.join(__dirname, "views"));
 
 //route:
-app.get("/", (req, res) => {
-	res.render("home");
-});
-app.get("/shop", (req, res) => {
-	res.render("shop");
-});
-app.get("/product", (req, res) => {
-	res.render("product-details");
-});
-app.get("/search", (req, res) => {
-	res.render("search");
-});
-
-app.get("/register", (req, res) => {
-	res.render("register");
-});
-app.post("/register", (req, res) => {
-	res.send("");
-});
+//connect to database:
+route(app);
 
 //Demo using local host
 app.listen(port, () => {
