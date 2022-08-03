@@ -5,7 +5,8 @@ const exphbs  = require('express-handlebars');
 const mongoose = require("./ulti/mongoose");
 const port = 3000;
 const app = express();
-
+const route = require('./routes');
+const db = require('./db')
 app.use(express.urlencoded());
 app.use(express.json());
 
@@ -21,10 +22,9 @@ app.engine('.hbs', exphbs.engine({
 }));
 app.set('view engine', '.hbs');
 app.set('views', path.join(__dirname, "views"));
-
+//Connect to Mongodb:
+db.connect();
 //Routes:
-const route = require('./routes');
-
 route(app);
 
 //Demo using local host
