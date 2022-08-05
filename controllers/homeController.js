@@ -5,12 +5,11 @@ class HomeController{
     //[Get] /
     index(req, res, next) {
         info.find({}).lean()
-            .then(info => info = info)
+            .then(info =>  res.render('home', {info}))
             .catch(next)
         product. find({}).lean()
             .then(products => products = products)
             .catch(next)
-        res.json(info)
         }
     }
     

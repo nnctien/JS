@@ -2,15 +2,21 @@ const mongoose = require('mongoose');
 const mongoosePaginate = require('mongoose-paginate-v2');
 
 const infoSchema = new mongoose.Schema({
-  shopName: {
+  name: {
     type: String,
     required: true,
     trim: true,
   },
-  adress:{
+  address:{
     type: String,
   },
   phoneNumber:{
+    type: String,
+  },
+  email:{
+    type: String,
+  },
+  descreption:{
     type: String,
   }
 });

@@ -1,4 +1,5 @@
 
+const user = require('../models/')
 class BlogController{
     //[Get] /
     index(req, res, next) {
