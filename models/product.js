@@ -27,6 +27,9 @@ const productSchema = new mongoose.Schema({
     type: String,
     trim: true,
   },
+  gender:{
+    type: String,
+  },
   category: {
     type: String,
     trim: true,
@@ -38,5 +41,4 @@ const productSchema = new mongoose.Schema({
 });
 
 productSchema.plugin( mongoosePaginate );
-
-module.exports = mongoose.model('product', productSchema)
+module.exports = mongoose.model('product', productSchema);
