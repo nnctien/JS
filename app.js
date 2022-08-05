@@ -26,9 +26,6 @@ app.set('views', path.join(__dirname, "views"));
 db.connect();
 //Routes:
 route(app);
-app.get('/add',(req, res) => {
-  res.render('addNewProduct', {layout: false}); 
-})
 
 //Demo using local host
 app.listen(port, () => {
