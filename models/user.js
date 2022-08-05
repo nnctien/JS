@@ -1,7 +1,7 @@
 
 const mongoose = require('mongoose');
 
-
+const passportLocalMongoose = require('passport-local-mongoose');
 // tài khoản sẽ đăng nhập = account và password
 const userSchema = new mongoose.Schema({
   name: {
@@ -50,13 +50,13 @@ const userSchema = new mongoose.Schema({
 
 //   return user;
 // };
+userSchema.plugin(passportLocalMongoose);
 
-
-if (mongoose.models.User) {
+if (mongoose.models.userSchema) {
   User = mongoose.model('User');
 } else {
   User = mongoose.model('User', userSchema);
 }
 
-module.exports = User;
+module.exports = userSchema;
 //module.exports = mongoose.model("User", userSchema);
