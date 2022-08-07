@@ -1,18 +1,23 @@
 const mongoose = require('mongoose');
 const mongoosePaginate = require('mongoose-paginate-v2');
 const productSchema = new mongoose.Schema({
-  quantity: {
-    type: Number,
-    required: true,
-  },
-  price: {
-    type: mongoose.Decimal128,
-    required: true,
-  },
   name: {
     type: String,
     required: true,
     trim: true,
+  },
+  brand:{
+    type: String,
+    required: false,
+  },
+  quantity: {
+    type: Number,
+    required: true,
+    default: 0,
+  },
+  price: {
+    type: mongoose.Decimal128,
+    required: true,
   },
   imageLink: {
     type: String,
@@ -26,6 +31,8 @@ const productSchema = new mongoose.Schema({
   availability: {
     type: String,
     trim: true,
+    default: 0,
+
   },
   gender:{
     type: String,
@@ -36,7 +43,7 @@ const productSchema = new mongoose.Schema({
   },
   views:{
     type: Number,
-    default : 0,
+    default: 0,
   }
 });
 
