@@ -1,5 +1,5 @@
 # Shopping website
-Nodejs + ExpressJS__
-Template engine: Handlebars__
-Databass: MongoDB__
+Nodejs + ExpressJS\ 
+Template engine: Handlebars\
+Databass: MongoDB\
 In termical, use command: 'npm start' to start server
