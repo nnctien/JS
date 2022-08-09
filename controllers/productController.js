@@ -5,6 +5,7 @@ class ProductController{
     index(req, res, next) {
         res.render('product-details');
     }
+    //[Get] /product/:id
     show(req, res, next) {
         Product.findOne({ id : req.params.id}).lean()
             .then( 
@@ -12,18 +13,25 @@ class ProductController{
                     res.render('product-details', {product})
                 )
             .catch(next);
+        }
 
-    }
-    save(req, res, next) {
-        const formData = req.body;
-        const product = new Product(formData)
-        product.save()
-        res.json(product)
-    }
+
+
+    //Add new product API:
+    //[Get] /product/add
     add(req, res, next) {
         res.render('addNewProduct',{
             layout: false
         })
+    }
+    //[POST] /product/save
+    save(req, res, next) {
+        const formData = req.body;
+        const product = new Product(formData)
+        product.save( function(err){
+            if (!err) res.json(product) 
+            else res.send('Can not save this document');   
+    });
     }
 }
 module.exports = new ProductController;

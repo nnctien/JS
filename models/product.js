@@ -3,7 +3,7 @@ const mongoosePaginate = require('mongoose-paginate-v2');
 const productSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true,
+    required: false,
     trim: true,
   },
   brand:{
@@ -12,16 +12,16 @@ const productSchema = new mongoose.Schema({
   },
   quantity: {
     type: Number,
-    required: true,
+    required: false,
     default: 0,
   },
   price: {
     type: mongoose.Decimal128,
-    required: true,
+    required: false,
   },
   imageLink: {
     type: String,
-    required: true,
+    required: false,
     trim: true,
   },
   description: {
