@@ -6,7 +6,7 @@ class ProductController{
         res.render('product-details');
     }
     show(req, res, next) {
-        Products.findOne({ _id : req.params._id}).lean()
+        Products.findOne({ id : req.params.id}).lean()
             .then( 
                 (product) =>
                     res.render('product-details', {product})
