@@ -5,5 +5,10 @@ class ProductController{
     index(req, res, next) {
         res.render('product-details');
     }
+    add(req, res, next) {
+        res.render('addNewProduct',{
+            layout: false
+        })
+    }
 }
 module.exports = new ProductController;
