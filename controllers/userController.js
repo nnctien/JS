@@ -1,4 +1,3 @@
-const {MultiMongoosetoObject} = require('../ulti/mongoose');
 
 class UserController{
     //[Get] /register

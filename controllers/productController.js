@@ -1,4 +1,3 @@
-const {MultiMongoosetoObject} = require('../ulti/mongoose')
 const Product = require('../models/product')
 class ProductController{
     //[Get] /product
@@ -8,8 +7,7 @@ class ProductController{
     //[Get] /product/:id
     show(req, res, next) {
         Product.findOne({ id : req.params.id}).lean()
-            .then( 
-                (product) =>
+            .then( (product) =>
                     res.render('product-details', {product})
                 )
             .catch(next);

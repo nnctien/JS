@@ -1,8 +1,14 @@
 
+const Product = require('../models/product')
+
 class ShopController{
     //[Get] /
     index(req, res, next) {
-        res.render('shop');
+        Product.find({}).lean()
+            .then((product)=>
+                res.render('shop', {product})
+            )
+            .catch(next)
 
     }
 }

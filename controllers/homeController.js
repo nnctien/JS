@@ -1,4 +1,4 @@
-const {MultiMongoosetoObject} = require('../ulti/mongoose');
+
 const info = require('../models/info');
 const product = require('../models/product');
 class HomeController{

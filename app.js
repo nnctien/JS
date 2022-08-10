@@ -2,7 +2,6 @@ const path = require("path");
 const express = require('express');
 const morgan = require('morgan');
 const exphbs  = require('express-handlebars');
-const mongoose = require("./ulti/mongoose");
 const port = 3000;
 const app = express();
 const route = require('./routes');
