@@ -1,19 +1,21 @@
 const Product = require('../models/product')
+const Category = require('../models/category')
 class AdminController{
     index(req, res, next) {
         res.render('admin/index',{
-            layout: false
+            layout: 'admin'
         })
     }
     //[Get] /admin/products:
     show(req, res, next) {
         Product.find({}).lean()
-            .then((product) =>
+            .then( (product) =>
             res.render('admin/products',{
-                layout: false,
+                layout: 'admin',
                 product
             })
             )
+            .catch(next)
 
     }
     //Add new product API:

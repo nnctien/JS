@@ -5,12 +5,14 @@ class HomeController{
     //[Get] /
     index(req, res, next) {
         info.find({}).lean()
-            .then(info =>  res.render('home', {info}))
+            .then((info)  )
             .catch(next)
         product. find({}).lean()
-            .then(products => products = products)
+            .then((product))
             .catch(next)
-        }
+        res.render('home')
+            //res.json(Info)
+    }
     }
     
 module.exports = new HomeController;
