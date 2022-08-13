@@ -24,6 +24,11 @@ class AdminController{
         res.render('admin/addNewProduct',{
             layout: false
         })
+    }    
+    add(req, res, next) {
+        res.render('admin/editProduct',{
+            layout: 'admin'
+        })
     }
     //[POST] /product/save
     save(req, res, next) {
@@ -34,5 +39,6 @@ class AdminController{
             else res.send('Can not save this document');   
     });
     }
+
 }
 module.exports = new AdminController;
