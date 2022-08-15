@@ -1,8 +1,17 @@
+API: Application Programming Interface
 Query parameters:
-direct to address:....
+direct to url:....
 điều hướng người dùng sang địa chỉ abc.com/search?q=a+b+c&ref=c&author=lyc
+
 get: receive data from server to client
 post: send data from client to server 
+put: edit all fields of data
+patch: edit one fields
+
 form data is not query parameters
 	to get data submited: req.body
 Mongoose is for working with mongodb in Nodejs
+
+using method-override to edit item(html hasn't supported PUT method yet)
+
+

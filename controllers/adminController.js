@@ -27,7 +27,7 @@ class AdminController{
     }    
     //[Get /product/edit/:id]
     edit(req, res, next) {
-        Product.findOne({_id: req.params.id}).lean()
+        Product.findById({_id: req.params.id}).lean()
          .then((product)=>
             res.render('admin/editProduct',{
                 layout: 'admin',
@@ -45,8 +45,8 @@ class AdminController{
             else res.send('Can not save this document');   
     });
     }
-    //[POST] /product/save
-    save(req, res, next) {
+    //[POST] /products/save/:id
+    saveEdited(req, res, next) {
     const formData = req.body;
     const product = new Product(formData)
     product.save( function(err){
