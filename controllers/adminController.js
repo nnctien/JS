@@ -45,14 +45,17 @@ class AdminController{
             else res.send('Can not save this document');   
     });
     }
-    //[POST] /products/save/:id
+    //[POST] /save/:id
     saveEdited(req, res, next) {
-    const formData = req.body;
-    const product = new Product(formData)
-    product.save( function(err){
-        if (!err) res.json(product) 
-        else res.send('Can not save this document');   
-    });
+    // const formData = req.body;
+    // const product = new Product(formData)
+    // product.save( function(err){
+    //     if (!err) res.json(product) 
+    //     else res.send('Can not save this document');   
+    // });
+        Product.updateOne({_id: req.params.id}, req.body).lean()
+            .then(() => res.redirect('/admin/products'))
+            .catch(next)
     }
 
 }

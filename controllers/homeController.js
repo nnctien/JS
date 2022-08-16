@@ -6,10 +6,9 @@ class HomeController{
     index(req, res, next) {
         info.find({}).lean()
             .then((info) =>
-                product. find({}).lean()
+                product.find({}).lean()
                     .then((product)=>
-                    //res.render('home',{product,info})
-                    res.json(info)
+                        res.render('home',{product,info})
                     )
                     .catch(next)
             )

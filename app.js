@@ -2,12 +2,16 @@ const path = require("path");
 const express = require('express');
 const morgan = require('morgan');
 const exphbs  = require('express-handlebars');
+var methodOverride = require('method-override');
+
 const port = 3000;
 const app = express();
 const route = require('./routes');
 const db = require('./db')
 app.use(express.urlencoded());
 app.use(express.json());
+
+app.use(methodOverride('_method'));
 
 //Morgan HTTP logger:
 app.use(morgan('combined'));

@@ -10,7 +10,7 @@ router.post('/save', AdminController.save);
 //Edit product
 router.get('/products/:id', AdminController.edit);
 //Save product that just edited
-router.post('/save/:id', AdminController.saveEdited);
+router.put('/save/:id', AdminController.saveEdited);
 //Get dashboard site
 router.get('/', AdminController.index);
 
