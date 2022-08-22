@@ -14,4 +14,8 @@ Mongoose is for working with mongodb in Nodejs
 
 using method-override to edit item(html hasn't supported PUT method yet)
 
+redirect: add a key "location" in response headers
 
+code prettier
+
+We should use single quotes

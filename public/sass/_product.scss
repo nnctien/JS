@@ -9,7 +9,7 @@
 .filter__controls {
   text-align: right;
   margin-bottom: 50px;
-  
+
   li {
     font-size: 14px;
     list-style: none;
@@ -20,21 +20,20 @@
     cursor: pointer;
 
     &.active {
-
       &:after {
         opacity: 1;
       }
     }
 
     &:after {
-        position: absolute;
-        left: 0;
-        bottom: -4px;
-        height: 2px;
-        width: 100%;
-        background: $primary-color;
-        content: "";
-        opacity: 0;
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      height: 2px;
+      width: 100%;
+      background: $primary-color;
+      content: "";
+      opacity: 0;
     }
 
     &:last-child {
@@ -56,16 +55,13 @@
   }
 
   &.sale {
-
     .product__item__pic {
-
       .label {
         background: $primary-color;
       }
     }
 
     .product__item__text {
-
       .product__price {
         color: $primary-color;
       }
@@ -88,7 +84,7 @@
     position: absolute;
     left: 10px;
     top: 10px;
-    
+
     &.new {
       background: #36a300;
     }
@@ -98,7 +94,7 @@
     }
 
     &.stockblue {
-      background: #0066bd!important;
+      background: #0066bd !important;
     }
 
     &.sale {
@@ -113,7 +109,7 @@
   width: 100%;
   bottom: 30px;
   text-align: center;
-  
+
   li {
     list-style: none;
     display: inline-block;
@@ -136,10 +132,9 @@
     }
 
     &:hover {
-
       a {
         background: $primary-color;
-        
+
         span {
           color: $white-color;
           -webkit-transform: rotate(360deg);
@@ -158,13 +153,13 @@
       line-height: 48px;
       text-align: center;
       border-radius: 50%;
-      @include transition(all, .5s);
+      @include transition(all, 0.5s);
 
       span {
         position: relative;
         -webkit-transform: rotate(0);
         transform: rotate(0);
-        @include transition(all, .3s);
+        @include transition(all, 0.3s);
         display: inline-block;
       }
     }
@@ -176,7 +171,6 @@
   padding-top: 22px;
 
   h6 {
-    
     a {
       font-size: 14px;
       color: $heading-color;

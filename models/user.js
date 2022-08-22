@@ -1,7 +1,6 @@
+const mongoose = require("mongoose");
 
-const mongoose = require('mongoose');
-
-const passportLocalMongoose = require('passport-local-mongoose');
+const passportLocalMongoose = require("passport-local-mongoose");
 // tài khoản sẽ đăng nhập = account và password
 const userSchema = new mongoose.Schema({
   name: {
@@ -35,7 +34,7 @@ const userSchema = new mongoose.Schema({
   status: {
     type: String,
     trim: true,
-  }
+  },
   //status là trạng thai user, nếu lock thì không login được, không lock thì login đc
 });
 // userSchema.statics.login = async (account, password) => {
@@ -53,9 +52,9 @@ const userSchema = new mongoose.Schema({
 userSchema.plugin(passportLocalMongoose);
 
 if (mongoose.models.userSchema) {
-  User = mongoose.model('User');
+  User = mongoose.model("User");
 } else {
-  User = mongoose.model('User', userSchema);
+  User = mongoose.model("User", userSchema);
 }
 
 module.exports = userSchema;

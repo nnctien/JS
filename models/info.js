@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const mongoosePaginate = require('mongoose-paginate-v2');
+const mongoose = require("mongoose");
+const mongoosePaginate = require("mongoose-paginate-v2");
 
 const infoSchema = new mongoose.Schema({
   name: {
@@ -7,19 +7,19 @@ const infoSchema = new mongoose.Schema({
     required: true,
     trim: true,
   },
-  address:{
+  address: {
     type: String,
   },
-  phoneNumber:{
+  phoneNumber: {
     type: String,
   },
-  email:{
+  email: {
     type: String,
   },
-  descreption:{
+  descreption: {
     type: String,
-  }
+  },
 });
 
-infoSchema.plugin( mongoosePaginate );
-module.exports = mongoose.model('info', infoSchema)
+infoSchema.plugin(mongoosePaginate);
+module.exports = mongoose.model("info", infoSchema);

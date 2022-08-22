@@ -1,11 +1,10 @@
-
-class BlogController{
-    //[Get] /
-    index(req, res, next) {
-        res.render('blog');
-    }
-    showBlog(req, res, next) {
-        res.render('blog-details');
-    }
+class BlogController {
+  //[Get] /
+  index(req, res, next) {
+    res.render("blog");
+  }
+  showBlog(req, res, next) {
+    res.render("blog-details");
+  }
 }
-module.exports = new BlogController
+module.exports = new BlogController();

@@ -1,80 +1,131 @@
+<div class="container mt-5">
+  <div class="row tm-content-row">
+    <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8 tm-block-col">
+      <div class="tm-bg-primary-dark tm-block tm-block-products">
+        <div class="tm-product-table-container">
+          <table class="table table-hover tm-table-small tm-product-table">
+            <thead>
+              <tr>
+                <th scope="col">&nbsp;</th>
+                <th scope="col">PRODUCT NAME</th>
+                <th scope="col">UNIT SOLD</th>
+                <th scope="col">IN STOCK</th>
+                <th scope="col">&nbsp;</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each product}}
+                <tr>
+                  <th scope="row"><input type="checkbox" /></th>
+                  <td class="tm-product-name"><a
+                      href="/admin/products/{{this._id}}"
+                    >{{this.name}}</a></td>
+                  <td>{{this.quantity}}</td>
+                  <td>{{this.availability}}</td>
+                  <td>
+                    <a
+                      href=""
+                      class="tm-product-delete-link"
+                      data-bs-toggle="modal"
+                      data-id="{{this._id}}"
+                      data-bs-target="#deleteModal"
+                    >
+                      <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                    </a>
+                  </td>
+                </tr>
+              {{/each}}
+            </tbody>
 
-
-   <div class="container mt-5">
-      <div class="row tm-content-row">
-        <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8 tm-block-col">
-          <div class="tm-bg-primary-dark tm-block tm-block-products">
-            <div class="tm-product-table-container">
-              <table class="table table-hover tm-table-small tm-product-table">
-                <thead>
-                  <tr>
-                    <th scope="col">&nbsp;</th>
-                    <th scope="col">PRODUCT NAME</th>
-                    <th scope="col">UNIT SOLD</th>
-                    <th scope="col">IN STOCK</th>
-                    <th scope="col">&nbsp;</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {{#each product}}
-                  <tr>
-                    <th scope="row"><input type="checkbox" /></th>
-                    <td class="tm-product-name"><a href="/admin/products/{{this._id}}">{{this.name}}</a></td>
-                    <td>{{this.quantity}}</td>
-                    <td>{{this.availability}}</td>
-                    <td>
-                      <a href="#" class="tm-product-delete-link">
-                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  {{/each}}
-                </tbody>
-
-              </table>
-            </div>
-            <!-- table container -->
-            <a
-              href="add-product.html"
-              class="btn btn-primary btn-block text-uppercase mb-3">Add new product</a>
-            <button class="btn btn-primary btn-block text-uppercase">
-              Delete selected products
-            </button>
-          </div>
+          </table>
         </div>
-        <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 tm-block-col">
-          <div class="tm-bg-primary-dark tm-block tm-block-product-categories">
-            <h2 class="tm-block-title">Product Categories</h2>
-            <div class="tm-product-table-container">
-              <table class="table tm-table-small tm-product-table">
-                <tbody>
-                  {{#each categories}}
-                  <tr>
-                    <td class="tm-product-name"> {{this.category}}</td>
-                    <td class="text-center">
-                      <a href="#" class="tm-product-delete-link">
-                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  {{/each}}
-                </tbody>
-              </table>
-            </div>
-            <!-- table container -->
-            <button class="btn btn-primary btn-block text-uppercase mb-3">
-              Add new category
-            </button>
-          </div>
-        </div>
+        <!-- table container -->
+        <a
+          href="products/add"
+          class="btn btn-primary btn-block text-uppercase mb-3"
+        >
+          Add new product
+        </a>
+        <button
+          class="btn btn-primary btn-block text-uppercase"
+          data-bs-toggle="modal"
+          data-bs-target="#deleteModal"
+        >
+          Delete selected products
+        </button>
       </div>
     </div>
-    <footer class="tm-footer row tm-mt-small">
-      <div class="col-12 font-weight-light">
-        <p class="text-center text-white mb-0 px-4 small">
-          Copyright &copy; <b>2018</b> All rights reserved. 
-          
-          Design: <a rel="nofollow noopener" href="https://templatemo.com" class="tm-footer-link">Template Mo</a>
-        </p>
+    <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 tm-block-col">
+      <div class="tm-bg-primary-dark tm-block tm-block-product-categories">
+        <h2 class="tm-block-title">Product Categories</h2>
+        <div class="tm-product-table-container">
+          <table class="table tm-table-small tm-product-table">
+            <tbody>
+              {{#each categories}}
+                <tr>
+                  <td class="tm-product-name"> {{this.category}}</td>
+                  <td class="text-center">
+                    <a
+                      href=""
+                      class="tm-product-delete-link"
+                      data-bs-toggle="modal"
+                      data-bs-target="#deleteModal"
+                    >
+                      <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                    </a>
+                  </td>
+                </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+        <!-- table container -->
+        <button class="btn btn-primary btn-block text-uppercase mb-3">
+          Add new category
+        </button>
       </div>
-    </footer>
+    </div>
+  </div>
+</div>
+<!-- Alert -->
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="deleteModal"
+  tabindex="-1"
+  aria-labelledby="deleteModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLabel">Modal title</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        Are you sure to delete this/these products?
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-bs-dismiss="modal"
+        >Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  const deleteModal = document.getElementById('deleteModal')
+  deleteModal.addEventListener('show.bs.modal', event => { // Button that
+  triggered the modal const button = event.relatedTarget // Extract info from
+  data-bs-* attributes const id = button.getAttribute('data-id') console.log(id)
+  })
+</script>

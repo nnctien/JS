@@ -5,13 +5,12 @@
   height: 500px;
 }
 // .banner__item {
- 
+
 //   display: flex;
 //   align-items: center;
 // }
 
 .banner__text {
-
   span {
     font-size: 18px;
     color: $primary-color;
@@ -21,7 +20,7 @@
   h1 {
     font-size: 80px;
     color: $heading-color;
-    font-family: 'Cookie', cursive;
+    font-family: "Cookie", cursive;
     margin-bottom: 15px;
   }
 
@@ -51,7 +50,6 @@
   padding: 150px 0 0;
 
   &.owl-carousel {
-
     .owl-dots {
       position: absolute;
       left: 0;
@@ -87,9 +85,7 @@
 }
 
 .trend__content {
-
   .section-title {
-
     h4 {
       font-size: 20px;
 
@@ -151,7 +147,6 @@
   Discount
 -----------------------*/
 .discount__pic {
-
   img {
     min-width: 100%;
     height: 100%;
@@ -214,7 +209,7 @@
   h2 {
     font-size: 60px;
     color: $primary-color;
-    font-family: 'Cookie', cursive;
+    font-family: "Cookie", cursive;
     line-height: 46px;
     margin-bottom: 10px;
   }
@@ -304,7 +299,6 @@
   z-index: 1;
 
   &:hover {
-
     &:after {
       opacity: 1;
     }
@@ -325,7 +319,7 @@
     content: "";
     opacity: 0;
     z-index: -1;
-    @include transition(all, .3s);
+    @include transition(all, 0.3s);
   }
 }
 
@@ -333,7 +327,7 @@
   text-align: center;
   opacity: 0;
   visibility: hidden;
-  @include transition(all, .3s);
+  @include transition(all, 0.3s);
 
   i {
     font-size: 30px;

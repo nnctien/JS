@@ -19,18 +19,17 @@
 }
 
 .categories__accordion {
-
   .card {
     border: none;
     border-radius: 0;
     padding-bottom: 12px;
-    border-bottom: 1px solid #f2f2f2!important;
+    border-bottom: 1px solid #f2f2f2 !important;
     margin-bottom: 12px;
 
     &:last-child {
       padding-bottom: 0;
       margin-bottom: 0;
-      border-bottom: none!important;
+      border-bottom: none !important;
     }
   }
 
@@ -75,7 +74,7 @@
 }
 
 .categories__accordion .card-heading a:after,
-.categories__accordion .card-heading > a.active[aria-expanded=false]:after {
+.categories__accordion .card-heading > a.active[aria-expanded="false"]:after {
   content: "\f107";
   font-size: 14px;
   font-family: "FontAwesome";
@@ -95,7 +94,7 @@
   top: -1px;
 }
 
-.categories__accordion .card-heading a[aria-expanded=true]:after,
+.categories__accordion .card-heading a[aria-expanded="true"]:after,
 .categories__accordion .card-heading > a.active:after {
   content: "\f106";
   font-size: 14px;
@@ -147,24 +146,24 @@
 }
 
 .filter-range-wrap .range-slider .price-input:after {
-	position: absolute;
+  position: absolute;
   left: 81px;
   top: 12px;
-	height: 1px;
-	width: 5px;
-	background: #0d0d0d;
-	content: "";
+  height: 1px;
+  width: 5px;
+  background: #0d0d0d;
+  content: "";
 }
 
 .filter-range-wrap .range-slider .price-input input {
   font-size: 16px;
-	color: #0d0d0d;
+  color: #0d0d0d;
   max-width: 16%;
   border: none;
 }
 
 .filter-range-wrap .range-slider .price-input input:nth-child(1) {
-	margin-right: 28px;
+  margin-right: 28px;
 }
 
 .filter-range-wrap .price-range {
@@ -173,24 +172,24 @@
 }
 
 .filter-range-wrap .price-range.ui-widget-content {
-	border: none;
-	background: rgba(0, 0, 0, 0.1);
-	height: 5px;
+  border: none;
+  background: rgba(0, 0, 0, 0.1);
+  height: 5px;
 }
 
 .filter-range-wrap .price-range.ui-widget-content .ui-slider-handle {
-	height: 14px;
-	width: 14px;
-	border-radius: 50%;
-	background: $primary-color;
-	border: none;
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  background: $primary-color;
+  border: none;
   outline: none;
   cursor: pointer;
 }
 
 .filter-range-wrap .price-range .ui-slider-range {
-	background: $primary-color;
-	border-radius: 0;
+  background: $primary-color;
+  border-radius: 0;
 }
 
 .sidebar__sizes {
@@ -205,7 +204,6 @@
   }
 
   .size__list {
-
     label {
       display: block;
       padding-left: 20px;
@@ -220,10 +218,9 @@
         visibility: hidden;
 
         &:checked {
-
           & ~ .checkmark {
             border-color: $primary-color;
-    
+
             &:after {
               border-color: $primary-color;
               opacity: 1;
@@ -264,7 +261,6 @@
   @extend .sidebar__sizes;
 
   .color__list {
-
     label {
       text-transform: capitalize;
     }
@@ -272,7 +268,6 @@
 }
 
 .pagination__option {
-
   a {
     display: inline-block;
     height: 40px;
@@ -284,7 +279,7 @@
     font-weight: 600;
     line-height: 40px;
     text-align: center;
-    @include transition(all, .3s);
+    @include transition(all, 0.3s);
     margin-right: 6px;
 
     &:last-child {

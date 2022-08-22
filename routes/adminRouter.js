@@ -1,17 +1,20 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const AdminController = require('../controllers/adminController')
+const AdminController = require("../controllers/adminController");
 //Add a new product
-router.get('/add', AdminController.add);
+router.get("/products/add", AdminController.add);
 //Get list of product
-router.get('/products', AdminController.show);
+router.get("/products", AdminController.show);
 //Save product is just created to db
-router.post('/save', AdminController.save);
+router.post("/products/save", AdminController.save);
 //Edit product
-router.get('/products/:id', AdminController.edit);
+router.get("/products/:id", AdminController.edit);
 //Save product that just edited
-router.put('/save/:id', AdminController.saveEdited);
+router.put("/save/:id", AdminController.saveEdited);
+//
+router.delete("/delete/:id", AdminController.delete);
+
 //Get dashboard site
-router.get('/', AdminController.index);
+router.get("/", AdminController.index);
 
 module.exports = router;

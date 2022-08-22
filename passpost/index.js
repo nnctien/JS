@@ -1,3 +1,3 @@
-var passport = require('passport');
+var passport = require("passport");
 
 passport.use(strategy);
