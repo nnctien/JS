@@ -41,8 +41,8 @@ class AdminController {
   save(req, res, next) {
     const product = new Product(req.body);
     product.save(function (err) {
-      if (!err) res.json(product);
-      else res.send("Can not save this document");
+      if (!err) res.redirect("/admin/products");
+      else res.send("Can not save this product");
     });
   }
   //[POST] /save/:id

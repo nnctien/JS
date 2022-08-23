@@ -1,3 +1,9 @@
+<script src="/js/jquery-3.3.1.min.js"></script>
+<!-- https://jquery.com/download/ -->
+<script src="/jquery-ui-datepicker/jquery-ui.min.js"></script>
+<!-- https://jqueryui.com/download/ -->
+<script src="/js/bootstrap.min.js"></script>
+<!-- https://getbootstrap.com/ -->
 <div class="container mt-5">
   <div class="row tm-content-row">
     <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8 tm-block-col">
@@ -24,11 +30,11 @@
                   <td>{{this.availability}}</td>
                   <td>
                     <a
-                      href=""
+                      href="#myModal"
                       class="tm-product-delete-link"
-                      data-bs-toggle="modal"
                       data-id="{{this._id}}"
-                      data-bs-target="#deleteModal"
+                      data-bs-toggle="modal"
+                      data-bs-target="#myModal"
                     >
                       <i class="far fa-trash-alt tm-product-delete-icon"></i>
                     </a>
@@ -89,43 +95,34 @@
 </div>
 <!-- Alert -->
 
-<!-- Modal -->
-<div
-  class="modal fade"
-  id="deleteModal"
-  tabindex="-1"
-  aria-labelledby="deleteModalLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog">
+<!-- Modal HTML -->
+<div id="myModal" class="modal fade">
+  <div class="modal-dialog modal-confirm">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="deleteModalLabel">Modal title</h5>
+      <div class="modal-header flex-column">
+        <div class="icon-box">
+          <i class="material-icons">&#xE5CD;</i>
+        </div>
+        <h4 class="modal-title w-100">Are you sure?</h4>
         <button
           type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        ></button>
+          class="close"
+          data-dismiss="modal"
+          aria-hidden="true"
+        >&times;</button>
       </div>
       <div class="modal-body">
-        Are you sure to delete this/these products?
+        <p>Do you really want to delete these records? This process cannot be
+          undone.</p>
       </div>
-      <div class="modal-footer">
+      <div class="modal-footer justify-content-center">
         <button
           type="button"
           class="btn btn-secondary"
-          data-bs-dismiss="modal"
-        >Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+          data-dismiss="modal"
+        >Cancel</button>
+        <button type="button" class="btn btn-danger">Delete</button>
       </div>
     </div>
   </div>
 </div>
-<script>
-  const deleteModal = document.getElementById('deleteModal')
-  deleteModal.addEventListener('show.bs.modal', event => { // Button that
-  triggered the modal const button = event.relatedTarget // Extract info from
-  data-bs-* attributes const id = button.getAttribute('data-id') console.log(id)
-  })
-</script>
