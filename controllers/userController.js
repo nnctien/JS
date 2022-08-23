@@ -1,7 +1,10 @@
 class UserController {
   //[Get] /register
-  index(req, res, next) {
+  register(req, res, next) {
     res.render("register");
+  }
+  login(req, res, next) {
+    res.render("login");
   }
 }
 module.exports = new UserController();

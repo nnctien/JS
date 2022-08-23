@@ -3804,3 +3804,10 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
