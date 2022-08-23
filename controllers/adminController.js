@@ -52,7 +52,7 @@ class AdminController {
       .then(() => res.redirect("/admin/products"))
       .catch(next);
   }
-  // [DETETE] /delete/:id
+  // [DETETE] product/delete/:id
   delete(req, res, next) {
     Product.deleteOne({ _id: req.params.id })
       .lean()

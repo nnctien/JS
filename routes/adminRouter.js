@@ -12,7 +12,7 @@ router.get("/products/:id", AdminController.edit);
 //Save product that just edited
 router.put("/save/:id", AdminController.saveEdited);
 //
-router.delete("/delete/:id", AdminController.delete);
+router.delete("/products/:id", AdminController.delete);
 
 //Get dashboard site
 router.get("/", AdminController.index);
