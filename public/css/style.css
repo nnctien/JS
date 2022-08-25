@@ -1793,7 +1793,6 @@ ol {
   text-transform: uppercase;
   padding: 14px 30px 15px;
   border-radius: 50px;
-  float: left;
   margin-right: 10px;
   margin-bottom: 10px;
 }
@@ -1848,7 +1847,6 @@ ol {
   font-weight: 600;
   color: #111111;
   width: 150px;
-  float: left;
 }
 
 .product__details__widget ul li .stock__checkbox {
@@ -3810,4 +3808,12 @@ content: "";
 flex: 1;
 height: 1px;
 background: #eee;
+}
+#card {
+  position: relative;
+  width: 320px;
+  display: block;
+  margin: 40px auto;
+  text-align: center;
+  font-family: 'Source Sans Pro', sans-serif;
 }

@@ -1,20 +1,17 @@
-const info = require("../models/info");
-const product = require("../models/product");
+const Info = require("../models/info");
+const Product = require("../models/product");
 class HomeController {
   //[Get] /
-  index(req, res, next) {
-    info
-      .find({})
-      .lean()
-      .then((info) =>
-        product
-          .find({})
-          .lean()
-          .then((product) => res.render("home", { product, info }))
-          .catch(next)
-      )
-      .catch(next);
-  }
-}
+async index(req, res, next) {
+  try{
+    const info = await Info.find({}).lean();
+    const product = await Product.find({}).lean();
+    res.render("Home");
+  }  
+  catch(next) {}
+};
 
+
+
+};
 module.exports = new HomeController();

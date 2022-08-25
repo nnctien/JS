@@ -60,6 +60,21 @@
                   required
                 >{{product.description}}</textarea>
               </div>
+               <div class="form-group mb-3">
+                <label
+                  for="gender"
+                  >Gender</label
+                >
+                <select
+                  class="custom-select tm-select-accounts"
+                  id="gender"
+                  value="{{product.gender}}"
+                > <option>{{product.gender}}</option>
+                  <option value="men">Men</option>
+                  <option value="women">Women</option>
+                  <option value="unisex">Unisex</option>
+                </select>
+              </div>
               <div class="form-group mb-3">
                 <label
                   for="category"

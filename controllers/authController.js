@@ -14,9 +14,9 @@ class AuthController {
     const user = new User(req.body);
     try {
       await user.save();
-      res.send("Thanh cong");
+      res.render("accountCreated");
     }
-    catch {
+    catch(next) {
       res.send("That bai");
     }
   };

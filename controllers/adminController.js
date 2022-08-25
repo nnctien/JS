@@ -26,16 +26,12 @@ class AdminController {
     });
   }
   //[Get /product/edit/:id]
-  edit(req, res, next) {
-    Product.findById({ _id: req.params.id })
-      .lean()
-      .then((product) =>
-        res.render("admin/editProduct", {
-          layout: "admin",
-          product,
-        })
-      )
-      .catch(next);
+  async edit(req, res, next) {
+    const product = await Product.findById({ _id: req.params.id }).lean()
+    res.render("admin/editProduct", {
+      layout: "admin",
+      product,
+    });
   }
   //[POST] /product/save
   save(req, res, next) {
