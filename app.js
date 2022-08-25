@@ -12,6 +12,9 @@ app.use(express.urlencoded());
 app.use(express.json());
 
 app.use(methodOverride("_method"));
+//Lohin using Passport:
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 //Morgan HTTP logger:
 app.use(morgan("combined"));

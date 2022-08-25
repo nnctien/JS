@@ -9,15 +9,19 @@ const infoSchema = new mongoose.Schema({
   },
   address: {
     type: String,
+    trim: true,
   },
   phoneNumber: {
     type: String,
+    trim: true,
   },
   email: {
     type: String,
+    trim: true,
   },
   descreption: {
     type: String,
+    trim: true,
   },
 });
 

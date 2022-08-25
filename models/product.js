@@ -4,20 +4,23 @@ const productSchema = new mongoose.Schema(
   {
     name: {
       type: String,
-      required: false,
+      required: true,
       trim: true,
     },
     brand: {
       type: String,
+      trim: true,
       required: false,
     },
     quantity: {
       type: Number,
       required: false,
+      trim: true,
       default: 0,
     },
     price: {
       type: mongoose.Decimal128,
+      trim: true,
       required: false,
     },
     imageLink: {

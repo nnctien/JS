@@ -115,28 +115,25 @@
           class="btn btn-secondary"
           data-dismiss="modal"
         >Close</button>
-        <button id ="deleteProduct" type="button" class="btn btn-primary">Delete</button>
+        <button
+          id="deleteProduct"
+          type="button"
+          class="btn btn-primary"
+        >Delete</button>
       </div>
     </div>
   </div>
 </div>
-{{!-- Hidden delete form --}}
-<form name="deleteForm" method="POST" ></form>
+{{! Hidden delete form }}
+<form name="deleteForm" method="POST"></form>
 
 <script>
 
-  document.addEventListener('DOMContentLoaded', function() {
-    var productId;
-    var deleteProduct = document.getElementById('deleteProduct');
-    var deleteForm = document.forms['deleteForm']
-    $('#deleteModal').on('show.bs.modal', function (event) { 
-      var button = $(event.relatedTarget); 
-      productId = button.data('id'); 
-      }); 
-    deleteProduct.onclick = function() {
-      deleteForm.action = '/admin/products/'+productId+'?_method=DELETE';
-      deleteForm.submit();
-    }
-  });
+  document.addEventListener('DOMContentLoaded', function() { var productId; var
+  deleteProduct = document.getElementById('deleteProduct'); var deleteForm =
+  document.forms['deleteForm'] $('#deleteModal').on('show.bs.modal', function
+  (event) { var button = $(event.relatedTarget); productId = button.data('id');
+  }); deleteProduct.onclick = function() { deleteForm.action =
+  '/admin/products/'+productId+'?_method=DELETE'; deleteForm.submit(); } });
 
 </script>

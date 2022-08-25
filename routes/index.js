@@ -8,6 +8,7 @@ const contactRouter = require("./contactRouter");
 const shopcartRouter = require("./shopcartRouter");
 const adminRouter = require("./adminRouter");
 const orderRouter = require("./orderRouter");
+const authRouter = require("./authRouter");
 function route(app) {
   app.use("/product", productRouter);
   app.use("/shop", shopRouter);
