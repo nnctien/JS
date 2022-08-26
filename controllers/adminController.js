@@ -1,22 +1,22 @@
 const Product = require("../models/product");
 const Category = require("../models/category");
 class AdminController {
+  //[Get] /admin:
   index(req, res, next) {
     res.render("admin/index", {
       layout: "admin",
     });
   }
   //[Get] /admin/products:
-  show(req, res, next) {
-    Product.find({})
-      .lean()
-      .then((product) =>
+  async show(req, res, next) {
+    const product = await Product.find({}).lean();
+    const categories = await Category.find({}).lean();
+
         res.render("admin/products", {
           layout: "admin",
           product,
+          categories,
         })
-      )
-      .catch(next);
   }
   //Add new product API:
   //[Get] /product/add
@@ -34,6 +34,7 @@ class AdminController {
     });
   }
   //[POST] /product/save
+  //Save new product
   save(req, res, next) {
     const product = new Product(req.body);
     product.save(function (err) {
@@ -42,6 +43,7 @@ class AdminController {
     });
   }
   //[POST] /save/:id
+  //Save updated product
   saveEdited(req, res, next) {
     Product.updateOne({ _id: req.params.id }, req.body)
       .lean()

@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const timestamps = require("mongoose-timestamp");
 
-const cateorySchema = new mongoose.Schema({
+const categorySchema = new mongoose.Schema({
   category: {
     type: String,
     trim: true,
@@ -11,7 +11,9 @@ const cateorySchema = new mongoose.Schema({
     type: Boolean,
     default: true,
   },
+},{
+  collection: 'categories',
 });
 
-cateorySchema.plugin(timestamps); // automatically adds createdAt and updatedAt timestamps
-module.exports = mongoose.model("Category", cateorySchema);
+categorySchema.plugin(timestamps); // automatically adds createdAt and updatedAt timestamps
+module.exports = mongoose.model("Category", categorySchema);

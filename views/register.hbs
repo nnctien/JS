@@ -18,6 +18,7 @@
                     id="name"
                     name="name"
                     class="form-control form-control-lg"
+                    minlength="6" required
                   />
                 </div>
 
@@ -29,6 +30,7 @@
                     id="username"
                     name="username"
                     class="form-control form-control-lg"
+                    minlength="6" required
                   />
                 </div>
 
@@ -39,6 +41,8 @@
                     name="password"
                     id="password"
                     class="form-control form-control-lg"
+                    onChange="onChange()"
+                    minlength="8" required
                   />
 
                 </div>
@@ -47,9 +51,10 @@
                   <label class="form-label" for="password">Repeat your password</label>
                   <input
                     type="password"
-                    name="password_2"
-                    id="form3Example4cdg"
+                    name="confirm_password"
+                    id="confirm_password"
                     class="form-control form-control-lg"
+                    onChange="onChange()"
                   />
                 </div>
 
@@ -69,6 +74,7 @@
                 <div class="d-flex justify-content-center">
                   <button
                     type="submit"
+                    value="registration"
                     class="btn btn-success btn-block btn-lg gradient-custom-4 text-body"
                   >Register</button>
                 </div>
@@ -86,3 +92,17 @@
     </div>
   </div>
 </section>
+
+
+
+<script>
+function onChange() {
+  const password = document.querySelector('input[name=password]');
+  const confirm = document.querySelector('input[name=confirm_password]');
+  if (confirm.value === password.value) {
+    confirm.setCustomValidity('');
+  } else {
+    confirm.setCustomValidity('Passwords do not match');
+  }
+}
+</script>
