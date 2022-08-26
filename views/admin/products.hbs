@@ -129,15 +129,10 @@
 
 <script>
 
-  document.addEventListener('DOMContentLoaded', function() { 
-  var productId; 
-  var deleteProduct = document.getElementById('deleteProduct'); 
-  var deleteForm = document.forms['deleteForm'] 
-  $('#deleteModal').on('show.bs.modal', function(event) { 
-    var button = $(event.relatedTarget); productId = button.data('id');
-  }); 
-  deleteProduct.onclick = function() { 
-    deleteForm.action = '/admin/products/'+productId+'?_method=DELETE'; 
-  deleteForm.submit(); 
-  } });
+  document.addEventListener('DOMContentLoaded', function() { var productId; var
+  deleteProduct = document.getElementById('deleteProduct'); var deleteForm =
+  document.forms['deleteForm'] $('#deleteModal').on('show.bs.modal',
+  function(event) { var button = $(event.relatedTarget); productId =
+  button.data('id'); }); deleteProduct.onclick = function() { deleteForm.action
+  = '/admin/products/'+productId+'?_method=DELETE'; deleteForm.submit(); } });
 </script>

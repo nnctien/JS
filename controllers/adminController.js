@@ -12,11 +12,11 @@ class AdminController {
     const product = await Product.find({}).lean();
     const categories = await Category.find({}).lean();
 
-        res.render("admin/products", {
-          layout: "admin",
-          product,
-          categories,
-        })
+    res.render("admin/products", {
+      layout: "admin",
+      product,
+      categories,
+    });
   }
   //Add new product API:
   //[Get] /product/add
@@ -27,7 +27,7 @@ class AdminController {
   }
   //[Get /product/edit/:id]
   async edit(req, res, next) {
-    const product = await Product.findById({ _id: req.params.id }).lean()
+    const product = await Product.findById({ _id: req.params.id }).lean();
     res.render("admin/editProduct", {
       layout: "admin",
       product,

@@ -1,5 +1,4 @@
 const User = require("../models/user");
-
 class AuthController {
   //[Get] /register
   register(req, res, next) {
@@ -15,12 +14,9 @@ class AuthController {
     try {
       await user.save();
       res.render("accountCreated");
+    } catch (err) {
+      res.send(err);
     }
-    catch(next) {
-      res.send("That bai");
-    }
-  };
-
-
+  }
 }
 module.exports = new AuthController();

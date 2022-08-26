@@ -11,17 +11,17 @@
               <h2 class="text-uppercase text-center mb-5">Create an account</h2>
 
               <form method="POST" action="/register/save">
-                  <div class="form-outline mb-4">
+                <div class="form-outline mb-4">
                   <label class="form-label" for="name">Your name</label>
                   <input
                     type="text"
                     id="name"
                     name="name"
                     class="form-control form-control-lg"
-                    minlength="6" required
+                    minlength="6"
+                    required
                   />
                 </div>
-
 
                 <div class="form-outline mb-4">
                   <label class="form-label" for="username">Username</label>
@@ -30,7 +30,8 @@
                     id="username"
                     name="username"
                     class="form-control form-control-lg"
-                    minlength="6" required
+                    minlength="6"
+                    required
                   />
                 </div>
 
@@ -42,7 +43,8 @@
                     id="password"
                     class="form-control form-control-lg"
                     onChange="onChange()"
-                    minlength="8" required
+                    minlength="8"
+                    required
                   />
 
                 </div>
@@ -93,16 +95,11 @@
   </div>
 </section>
 
-
-
 <script>
-function onChange() {
-  const password = document.querySelector('input[name=password]');
-  const confirm = document.querySelector('input[name=confirm_password]');
-  if (confirm.value === password.value) {
-    confirm.setCustomValidity('');
-  } else {
-    confirm.setCustomValidity('Passwords do not match');
-  }
-}
+
+  function onChange() { const password =
+  document.querySelector('input[name=password]'); const confirm =
+  document.querySelector('input[name=confirm_password]'); if (confirm.value ===
+  password.value) { confirm.setCustomValidity(''); } else {
+  confirm.setCustomValidity('Passwords do not match'); } }
 </script>
