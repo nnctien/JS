@@ -1,6 +1,6 @@
 const Product = require("../models/product");
 const Category = require("../models/category");
-
+const Gender = require("../models/gender");
 class AdminController {
   //[Get] /admin:
   index(req, res, next) {
@@ -12,7 +12,6 @@ class AdminController {
   async show(req, res, next) {
     const product = await Product.find({}).lean();
     const categories = await Category.find({}).lean();
-
     res.render("admin/products", {
       layout: "admin",
       product,
@@ -21,17 +20,24 @@ class AdminController {
   }
   //Add new product API:
   //[Get] /product/add
-  add(req, res, next) {
+ async add(req, res, next) {
+    const categories = await Category.find({}).lean();
+    const gender = await Gender.find({}).lean();
     res.render("admin/addNewProduct", {
       layout: "admin",
+      gender,
+      categories,
     });
   }
   //[Get /product/edit/:id]
   async edit(req, res, next) {
     const product = await Product.findById({ _id: req.params.id }).lean();
+    const gender = await Gender.find({}).lean();
+
     res.render("admin/editProduct", {
       layout: "admin",
       product,
+      gender,
     });
   }
   //[POST] /product/save
@@ -39,7 +45,7 @@ class AdminController {
   save(req, res, next) {
     const product = new Product(req.body);
     product.save(function (err) {
-      if (!err) res.redirect("/admin/products");
+      if (!err) res.redirect("back");
       else res.send("Can not save this product");
     });
   }

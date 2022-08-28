@@ -1,4 +1,4 @@
-const createError = require('http-errors')
+const createError = require("http-errors");
 const User = require("../models/user");
 class AuthController {
   //[Get] /register
@@ -10,7 +10,7 @@ class AuthController {
     res.render("login");
   }
   //[Post] /auth
-  async saveUser (req, res, next) {
+  async saveUser(req, res, next) {
     try {
       // const result = await User.validateAsync(req.body)
       // const doesExist = await User.findOne({ username: result.username })
@@ -19,8 +19,7 @@ class AuthController {
       const user = new User(req.body);
       await user.save();
       res.render("accountCreated");
-    } 
-    catch (err) {
+    } catch (err) {
       res.send("Can't save this account");
     }
   }

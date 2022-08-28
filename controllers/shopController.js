@@ -21,7 +21,7 @@ class ShopController {
         category,
       });
     } catch (err) {
-      next(err)
+      next(err);
     }
   }
   //Get: /men
@@ -35,7 +35,7 @@ class ShopController {
         category,
       });
     } catch (err) {
-      next(err)
+      next(err);
     }
   }
 }
