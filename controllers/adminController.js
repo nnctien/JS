@@ -1,5 +1,6 @@
 const Product = require("../models/product");
 const Category = require("../models/category");
+
 class AdminController {
   //[Get] /admin:
   index(req, res, next) {
