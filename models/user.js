@@ -56,14 +56,7 @@ userSchema.methods.isValidPassword = async function (password) {
   try {
     return await bcrypt.compare(password, this.password);
   } catch (error) {
-    throw error;
   }
 };
-
-if (mongoose.models.userSchema) {
-  User = mongoose.model("User");
-} else {
-  User = mongoose.model("User", userSchema);
-}
 
 module.exports = mongoose.model("User", userSchema);

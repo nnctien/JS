@@ -20,7 +20,7 @@ class AdminController {
   }
   //Add new product API:
   //[Get] /product/add
- async add(req, res, next) {
+  async add(req, res, next) {
     const categories = await Category.find({}).lean();
     const gender = await Gender.find({}).lean();
     res.render("admin/addNewProduct", {
