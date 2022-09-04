@@ -19,3 +19,6 @@ redirect: add a key "location" in response headers
 code prettier
 
 We should use single quotes
+bucket partter
+Có 7 kiểu nguyên thủy và 1 kiểu tham chiếu
+lưu kiểu tham chiếu trong heap
