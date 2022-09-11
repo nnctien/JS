@@ -43,6 +43,7 @@ const productSchema = new mongoose.Schema(
     category: {
       type: String,
       trim: true,
+      ref:'categories',
     },
     views: {
       type: Number,

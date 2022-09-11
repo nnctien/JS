@@ -1,28 +1,39 @@
-const LocalStrategy = require("passport-local").Strategy;
-const bcrypt = require("bcrypt");
+const bcrypt = require('bcryptjs');
+var passport = require('passport')
+  , LocalStrategy = require('passport-local').Strategy;
 
-function initialize(passport, getUserByEmail, getUserById) {
-  const authenticateUser = async (email, password, done) => {
-    const user = getUserByEmail(email);
-    if (user == null) {
-      return done(null, false, { message: "No user with that email" });
-    }
+// const Account = require("../models/account")
+const Account = require("../models/user")
+//const Item = require('../models/item')
 
-    try {
-      if (await bcrypt.compare(password, user.password)) {
-        return done(null, user);
-      } else {
-        return done(null, false, { message: "Password incorrect" });
+passport.use(new LocalStrategy(
+  async function(username, password, done) {
+    try{
+      const user = await Account.findOne({username: username}).lean();
+      if (!user) {
+        return done(null, false, { message: 'Incorrect username.' });
       }
-    } catch (e) {
-      return done(e);
-    }
-  };
+      const isMatch = await bcrypt.compare(result.password, user.password);
+      if (!match) {
+        return done(null, false, { message: 'Incorrect password.' });
+      }
 
-  passport.use(new LocalStrategy({ usernameField: "email" }, authenticateUser));
-  passport.serializeUser((user, done) => done(null, user.id));
-  passport.deserializeUser((id, done) => {
-    return done(null, getUserById(id));
-  });
-}
-module.exports = initialize;
+      return done(null, user);
+    }
+    catch (err) {
+      return done(err);
+    }
+
+  },
+));
+
+
+passport.serializeUser(function(user, done) {
+  done(null, {username: user.username, name: user.name});
+});
+
+passport.deserializeUser(function(user, done) {
+  return done(null, user);
+});
+
+module.exports = passport;
