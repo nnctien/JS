@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 const mongoosePaginate = require("mongoose-paginate-v2");
+var mongoose_delete = require('mongoose-delete');
+
 const productSchema = new mongoose.Schema(
   {
     name: {
@@ -57,6 +59,6 @@ const productSchema = new mongoose.Schema(
     timestamps: true,
   }
 );
-
+productSchema.plugin(mongoose_delete);
 productSchema.plugin(mongoosePaginate);
 module.exports = mongoose.model("product", productSchema);

@@ -4,10 +4,10 @@ const timestamps = require("mongoose-timestamp");
 const cartSchema = new mongoose.Schema(
   {
     userId: {
-      type: ObjectId,
+      type:  mongoose.Types.ObjectId,
     },
     cartId: {
-      type: ObjectId,
+      type:  mongoose.Types.ObjectId,
     },
     status: {
       type: String,

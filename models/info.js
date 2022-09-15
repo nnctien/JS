@@ -24,5 +24,4 @@ const infoSchema = new mongoose.Schema({
   },
 });
 
-infoSchema.plugin(mongoosePaginate);
 module.exports = mongoose.model("info", infoSchema);

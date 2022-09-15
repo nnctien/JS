@@ -915,6 +915,11 @@
   optionalDependencies:
     "saslprep" "^1.0.3"
 
+"mongoose-delete@^0.5.4":
+  "integrity" "sha512-zKkcWFEwTneVG4Oiy+qJRJPFCiGlqOJToHeU3a3meJybWsHCnWxdHkGEkFWNY5cmYEv5av3WwByOhPlQ6I+FmQ=="
+  "resolved" "https://registry.npmjs.org/mongoose-delete/-/mongoose-delete-0.5.4.tgz"
+  "version" "0.5.4"
+
 "mongoose-paginate-v2@^1.7.0":
   "integrity" "sha512-r9bns1sMWRl0QO3YXVZ/uGOL/CYcDXTmapGHlddIgzbfOhVxUWKHKItwJO8rZICF1ooOukLQv8qQLVTc3qSLpQ=="
   "resolved" "https://registry.npmjs.org/mongoose-paginate-v2/-/mongoose-paginate-v2-1.7.0.tgz"
@@ -932,7 +937,7 @@
   dependencies:
     "defaults" "^1.0.3"
 
-"mongoose@^6.5.0":
+"mongoose@^6.5.0", "mongoose@4.x || 5.x || 6.x":
   "integrity" "sha512-3CFDrSLtK2qjM1pZeZpLTUyqPRkc11Iuh74ZrwS4IwEJ3K2PqGnmyPLw7ex4Kzu37ujIMp3MAuiBlUjfrcb6hw=="
   "resolved" "https://registry.npmjs.org/mongoose/-/mongoose-6.5.2.tgz"
   "version" "6.5.2"
