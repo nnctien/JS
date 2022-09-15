@@ -9,13 +9,14 @@ const productSchema = new mongoose.Schema(
     },
     code: {
       type: String,
+      required: false,
     },
     brand: {
       type: String,
       trim: true,
       required: false,
     },
-    quantity: {
+    sold: {
       type: Number,
       required: false,
       trim: true,
@@ -34,11 +35,6 @@ const productSchema = new mongoose.Schema(
     description: {
       type: String,
       trim: true,
-    },
-    availability: {
-      type: String,
-      trim: true,
-      default: 0,
     },
     gender: {
       type: String,
