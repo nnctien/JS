@@ -16,7 +16,7 @@ class AdminController {
   //This is for creating CRUD api for product
   //[Get] /admin/products:
   async show(req, res, next) {
-    const product = await Product.find({}).lean();
+    const product = await Product.find({deleted: false}).lean();
     const categories = await Category.find({}).lean();
     const inventory = await Inventory.find({}).lean()
     res.render("admin/products", {
