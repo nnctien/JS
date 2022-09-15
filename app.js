@@ -1,4 +1,4 @@
-require('dotenv').config();
+require("dotenv").config();
 const path = require("path");
 const express = require("express");
 const morgan = require("morgan");
@@ -13,7 +13,9 @@ app.use(express.urlencoded());
 app.use(express.json());
 
 app.use(methodOverride("_method"));
-//Lohin using Passport:
+
+//Passport:
+
 // app.use(passport.initialize());
 // app.use(passport.session());
 

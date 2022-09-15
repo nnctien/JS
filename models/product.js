@@ -7,6 +7,9 @@ const productSchema = new mongoose.Schema(
       required: true,
       trim: true,
     },
+    code: {
+      type: String,
+    },
     brand: {
       type: String,
       trim: true,
@@ -43,11 +46,15 @@ const productSchema = new mongoose.Schema(
     category: {
       type: String,
       trim: true,
-      ref:'categories',
+      ref: "categories",
     },
     views: {
       type: Number,
       default: 0,
+    },
+    specs: {
+      type: Array,
+      default: [],
     },
   },
   {
