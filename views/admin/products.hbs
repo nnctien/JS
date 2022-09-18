@@ -10,6 +10,7 @@
             <thead>
               <tr>
                 <th scope="col">&nbsp;</th>
+                <th scope="col">No</th>
                 <th scope="col">PRODUCT NAME</th>
                 <th scope="col">UNIT SOLD</th>
                 <th scope="col">IN STOCK</th>
@@ -19,11 +20,20 @@
             <tbody>
               {{#each product}}
                 <tr>
+
                   <th scope="row"><input type="checkbox" /></th>
+                  <td>{{@index}}</td>
                   <td class="tm-product-name"><a
                       href="/admin/products/{{this._id}}"
                     >{{this.name}}</a></td>
                   <td>{{this.sold}}</td>
+                  <td>
+                    {{#with (lookup ../inventory [productId = this._id])~}}
+                    {{quantity}}
+                    {{/with}}
+                    
+                  </td>
+
                   <td>
                     <button
                       href=""
@@ -36,9 +46,12 @@
                     </button>
                   </td>
                 </tr>
+                {{else}}
+                <tr>
+                  <td>There is no product for selling! </td>
+                </tr>
               {{/each}}
             </tbody>
-
           </table>
         </div>
         <!-- table container -->
@@ -115,7 +128,7 @@
           data-dismiss="modal"
         >Close</button>
         <button
-          id="deleteProduct"
+          id="deleteProductButton"
           type="button"
           class="btn btn-primary"
         >Delete</button>
@@ -129,14 +142,14 @@
 <script>
   document.addEventListener('DOMContentLoaded', function() { 
     var productId;
-    var deleteProduct = document.getElementById('deleteProduct'); 
+    var deleteProductButton = document.getElementById('deleteProductButton'); 
     var deleteForm = document.forms['deleteForm'] 
     $('#deleteModal').on('show.bs.modal', function(event) 
       { 
-        var button = $(event.relatedTarget); 
+      var button = $(event.relatedTarget); 
       productId = button.data('id'); 
       }); 
-    deleteProduct.onclick = function() { 
+    deleteProductButton.onclick = function() { 
       deleteForm.action = '/admin/products/'+productId+'?_method=DELETE'; 
       deleteForm.submit(); 
       } 

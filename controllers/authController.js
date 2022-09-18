@@ -19,7 +19,7 @@ class AuthController {
     if (check == null) {
       const user = new User(req.body);
       await user.save();
-      res.render("accountCreated");
+      res.render("accountCreate");
     } else {
       res.send("This username is not available");
     }

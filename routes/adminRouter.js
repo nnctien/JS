@@ -5,7 +5,7 @@ const AdminController = require("../controllers/adminController");
 router.get("/products/add", AdminController.add);
 //Get list of product
 router.get("/products", AdminController.show);
-//Save product is just created to db
+//Save product which is just created to db
 router.post("/products/save", AdminController.save);
 //Edit product
 router.get("/products/:id", AdminController.edit);
@@ -13,7 +13,6 @@ router.get("/products/:id", AdminController.edit);
 router.put("/save/:id", AdminController.saveEdited);
 //
 router.delete("/products/:id", AdminController.delete);
-
 //Get dashboard site
 router.get("/", AdminController.index);
 
