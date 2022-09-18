@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const timestamps = require("mongoose-timestamp");
-const mongoose_delete = require('mongoose-delete');
+const mongoose_delete = require("mongoose-delete");
 
 const inventorySchema = new mongoose.Schema(
   {

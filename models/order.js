@@ -1,8 +1,8 @@
 require("dotenv").config();
 const mongoose = require("mongoose");
 const timestamps = require("mongoose-timestamp");
-const GHN = require('giaohangnhanh');
-const token = 'hello';
+const GHN = require("giaohangnhanh");
+const token = "hello";
 const ghn = new GHN(token);
 const orderSchema = new mongoose.Schema(
   {
@@ -23,7 +23,15 @@ const orderSchema = new mongoose.Schema(
     },
     status: {
       type: String,
-      enum:["Pending","Accepted","Transiting","Done","Cancelled","notAccepted","Return"],
+      enum: [
+        "Pending",
+        "Accepted",
+        "Transiting",
+        "Done",
+        "Cancelled",
+        "notAccepted",
+        "Return",
+      ],
       default: "Pending",
     },
     products: {
