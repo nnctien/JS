@@ -2,8 +2,8 @@ require("dotenv").config();
 const mongoose = require("mongoose");
 const timestamps = require("mongoose-timestamp");
 const GHN = require('giaohangnhanh');
-const token: string = process.env.GHN;
-const ghn: GHN = new GHN(token);
+const token = 'hello';
+const ghn = new GHN(token);
 const orderSchema = new mongoose.Schema(
   {
     userId: {
