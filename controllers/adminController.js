@@ -1,10 +1,12 @@
 //
 //This is for creating CRUD api for product
 //
+const mongoose_delete = require("mongoose-delete");
 const Product = require("../models/product");
 const Category = require("../models/category");
 const Gender = require("../models/gender");
 const Inventory = require("../models/inventory");
+
 class AdminController {
   //[Get] /admin:
   index(req, res, next) {
@@ -16,8 +18,7 @@ class AdminController {
   //This is for creating CRUD api for product
   //[Get] /admin/products:
   async show(req, res, next) {
-
-    const product = await Product.find({deleted: false}).lean();
+    const product = await Product.find({ deleted: false }).lean();
     const categories = await Category.find({}).lean();
     const inventory = await Inventory.find({}).lean();
 
@@ -56,36 +57,45 @@ class AdminController {
   async save(req, res, next) {
     const product = new Product(req.body);
     const inventory = new Inventory({
-      productId : product._id,
-      quantity : req.body.quantity
-    })
+      productId: product._id,
+      quantity: req.body.quantity,
+    });
     try {
       await product.save();
       await inventory.save();
       res.redirect("back");
-    }
-    catch(next){
-
-    }
+    } catch (next) {}
   }
   //[POST] /save/:id
   //Save updated product
-  async saveEdited(req, res, next) {
-    await Product.updateOne({ _id: req.params.id }, req.body)
-    await Inventory.updateOne({ productId: req.params.id }, {
-      quantity: req.body.quantity,
-    })
-    res.redirect("/admin/products")
+  async saveUpdatedProduct(req, res, next) {
+    await Product.updateOne({ _id: req.params.id }, req.body);
+    await Inventory.updateOne(
+      { productId: req.params.id },
+      {
+        quantity: req.body.quantity,
+      }
+    );
+    res.redirect("/admin/products");
   }
   // [DETETE] product/delete/:id
-  delete(req, res, next) {
-    try{
-      
-      Product.delete( {_id : req.params.id} )
-      Inventory.delete( {productId: req.params.id} );
+  async delete(req, res, next) {
+    try {
+      await Product.delete({ _id: req.params.id });
+      await Inventory.delete({ productId: req.params.id });
       res.redirect("back");
+    } catch (e) {
+      console.log(e.message);
     }
-    catch (next){}
+  }
+  async restore(req, res, next) {
+    try {
+      await Product.restore({ _id: req.params.id });
+      await Inventory.restore({ productId: req.params.id });
+      res.redirect("back");
+    } catch (e) {
+      console.log(e.message);
+    }
   }
 }
 module.exports = new AdminController();

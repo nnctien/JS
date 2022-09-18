@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const mongoosePaginate = require("mongoose-paginate-v2");
-var mongoose_delete = require('mongoose-delete');
+var mongoose_delete = require("mongoose-delete");
 
 const productSchema = new mongoose.Schema(
   {
