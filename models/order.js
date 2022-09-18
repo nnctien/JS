@@ -1,6 +1,9 @@
+require("dotenv").config();
 const mongoose = require("mongoose");
 const timestamps = require("mongoose-timestamp");
-
+const GHN = require('giaohangnhanh');
+const token: string = process.env.GHN;
+const ghn: GHN = new GHN(token);
 const orderSchema = new mongoose.Schema(
   {
     userId: {
@@ -12,7 +15,7 @@ const orderSchema = new mongoose.Schema(
     cartId: {
       type: ObjectId,
     },
-    shipping: {
+    shippingFee: {
       type: Object,
     },
     payment: {

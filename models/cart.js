@@ -6,9 +6,6 @@ const cartSchema = new mongoose.Schema(
     userId: {
       type:  mongoose.Types.ObjectId,
     },
-    cartId: {
-      type:  mongoose.Types.ObjectId,
-    },
     status: {
       type: String,
       default: "active",
